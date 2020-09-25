@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Main from './Main';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Alert from './alert/Alert';
+import { AlertProvider } from './alert/AlertContect';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AlertProvider>
+      <div className='container pt-3' >
+        <Main toggle ={()=>{}}/>
+        <Alert/>
+      </div>
+    </AlertProvider>
   );
 }
 
